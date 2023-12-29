@@ -10,8 +10,15 @@ body {
         
 }
 
-/* ... existing styles ... */
+.logo-container {
+    text-align: center; /* Center the logo image */
+    margin-bottom: 20px; /* Space between the logo and the button */
+}
 
+.logo-container img {
+    width: 150px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
 .grayed-out {
     opacity: 0.4;
     pointer-events: none; /* Prevent further clicks */
@@ -23,6 +30,15 @@ body {
     background-color: #ff0000 !important; /* Optional: change background to indicate unselectability */
 }
 
+.header-title-logo img {
+    visibility: hidden;
+}
+.header-title-logo a {
+    background-image: url('images/bnet-logo-01.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 
 
 .character-select-container {

@@ -1,4 +1,25 @@
+let originalOrder = [];
+document.querySelectorAll('.character').forEach((char, index) => {
+    originalOrder[index] = char;
+});
+
 let selectedCharacters = [];
+
+function resetSelection() {
+    // Clear the selectedCharacters array
+    selectedCharacters = [];
+
+    // Remove all added classes from characters
+    document.querySelectorAll('.character').forEach(char => {
+        char.classList.remove('selected', 'grayed-out', 'unselectable');
+    });
+
+    // Restore the original order
+    const container = document.querySelector('.character-select-container');
+    originalOrder.forEach(char => {
+        container.appendChild(char);
+    });
+}
 
 function selectCharacter(characterId) {
     if (selectedCharacters.length < 90 && !selectedCharacters.includes(characterId)) {
@@ -29,7 +50,23 @@ function resetSelection() {
     document.querySelectorAll('.character').forEach(char => {
         char.classList.remove('selected', 'grayed-out', 'unselectable');
     });
+
+    // Restore the original order
+    const container = document.querySelector('.character-select-container');
+    originalOrder.forEach(char => {
+        container.appendChild(char);
+    });
 }
+
+/* function resetSelection() {
+    // Clear the selectedCharacters array
+    selectedCharacters = [];
+
+    // Remove all added classes from characters
+    document.querySelectorAll('.character').forEach(char => {
+        char.classList.remove('selected', 'grayed-out', 'unselectable');
+    });
+} */
 
 
 function sortCharacters() {
